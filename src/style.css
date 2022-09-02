@@ -116,3 +116,11 @@ body {
 .maxTemperature {
   margin-left: 7px;
 }
+
+.linkGitHub {
+  text-decoration: none;
+}
+
+.openSourceLink {
+  text-align: center;
+}
