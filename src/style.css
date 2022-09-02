@@ -1,0 +1,118 @@
+body {
+  font-family: "PT Mono", monospace;
+}
+
+.card {
+  border: 2px solid rgb(252, 253, 255);
+  margin: 0 auto;
+  margin-top: 50px;
+  max-width: 800px;
+}
+
+.card-body {
+  background: linear-gradient(
+    178.6deg,
+    rgb(232, 245, 253) 3.3%,
+    rgb(252, 253, 255) 109.6%
+  );
+  border-radius: 10px;
+}
+
+.form-control {
+  display: inline;
+  width: 95%;
+  border: 2px solid rgb(214, 232, 244);
+  margin-left: 15px;
+  margin-top: 5px;
+}
+
+.btn {
+  font-size: 13px;
+  margin-top: 5px;
+  max-height: 40px;
+}
+
+.actualParameters {
+  margin: 5px 5px -34px 25px;
+}
+
+.actualImage {
+  width: 150px;
+  margin-bottom: 30px;
+}
+
+.actualTemperature {
+  font-size: 60px;
+  font-weight: 500;
+  margin-left: -20px;
+}
+.units {
+  font-size: 20px;
+  position: relative;
+  top: -30px;
+}
+
+.parametersList {
+  list-style: none;
+  text-align: center;
+  margin-bottom: 30px;
+  margin-left: 10px;
+  padding: 0;
+}
+
+.listElement {
+  text-decoration: none;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.value {
+  font-weight: 600;
+}
+
+.column2 {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.actualCity {
+  font-size: 30px;
+  font-weight: 600;
+  margin-top: 5px;
+}
+
+.actualDay {
+  margin-top: 40px;
+}
+
+.actualDay,
+.actualDate,
+.actualTime,
+.actualDescription {
+  margin-bottom: 18px;
+  margin-left: 6px;
+  font-size: 18px;
+  font-weight: 550;
+}
+
+.bottomPart {
+  margin: 20px 10px;
+  text-align: center;
+}
+
+.nextDays {
+  font-weight: 600;
+}
+
+.nextDaysTemperatures {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.minTemperature {
+  margin-right: 7px;
+}
+
+.maxTemperature {
+  margin-left: 7px;
+}
