@@ -32,16 +32,16 @@ body {
   max-height: 40px;
 }
 
-.actualParameters {
-  margin: 5px 5px -34px 25px;
+.currentParameters {
+  margin: 5px 5px -34px 20px;
 }
 
-.actualImage {
+.currentImage {
   width: 150px;
   margin-bottom: 30px;
 }
 
-.actualTemperature {
+.currentTemperature {
   font-size: 60px;
   font-weight: 500;
   margin-left: -20px;
@@ -50,6 +50,11 @@ body {
   font-size: 20px;
   position: relative;
   top: -30px;
+}
+
+#unit-C,
+#unit-F {
+  text-decoration: none;
 }
 
 .parametersList {
@@ -75,20 +80,20 @@ body {
   text-align: center;
 }
 
-.actualCity {
+.currentCity {
   font-size: 30px;
   font-weight: 600;
   margin-top: 5px;
 }
 
-.actualDay {
+.currentDay {
   margin-top: 40px;
 }
 
-.actualDay,
-.actualDate,
-.actualTime,
-.actualDescription {
+.currentDay,
+.currentDate,
+.currentTime,
+.currentDescription {
   margin-bottom: 18px;
   margin-left: 6px;
   font-size: 18px;
@@ -123,4 +128,5 @@ body {
 
 .openSourceLink {
   text-align: center;
+  font-size: 12px;
 }

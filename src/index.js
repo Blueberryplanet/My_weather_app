@@ -57,12 +57,12 @@ function currentTime(time) {
 // Current parameters
 
 function showParameters(response) {
-  document.querySelector("#actual-city").innerHTML = response.data.name;
+  document.querySelector("#current-city").innerHTML = response.data.name;
 
-  document.querySelector("#actual-description").innerHTML =
+  document.querySelector("#current-description").innerHTML =
     response.data.weather[0].description;
 
-  document.querySelector("#actual-temperature").innerHTML = Math.round(
+  document.querySelector("#current-temperature").innerHTML = Math.round(
     response.data.main.temp
   );
 
@@ -122,14 +122,14 @@ function changeToFahrenheit(event) {
 }
 
 let now = new Date();
-let actualDate = document.querySelector("#actual-date");
-let actualTime = document.querySelector("#actual-time");
-let actualDay = document.querySelector("#actual-day");
+let actualDate = document.querySelector("#current-date");
+let actualTime = document.querySelector("#current-time");
+let actualDay = document.querySelector("#current-day");
 actualDay.innerHTML = currentDay(now);
 actualDate.innerHTML = currentDate(now);
 actualTime.innerHTML = currentTime(now);
 
-let actualTemperature = document.querySelector("#actual-temperature");
+let actualTemperature = document.querySelector("#current-temperature");
 let unitC = document.querySelector("#unit-C");
 let unitF = document.querySelector("#unit-F");
 unitC.addEventListener("click", changeToCelsius);
@@ -138,7 +138,7 @@ unitF.addEventListener("click", changeToFahrenheit);
 let enterTheCity = document.querySelector("#enter-the-city");
 enterTheCity.addEventListener("submit", submitCity);
 
-let currentButton = document.querySelector("#current-button");
+let currentButton = document.querySelector("#current-location-button");
 currentButton.addEventListener("click", currentLocation);
 
 searchCity("Florence");
