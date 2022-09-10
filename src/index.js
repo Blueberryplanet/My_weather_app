@@ -1,6 +1,7 @@
 // Second column - day, time etc.
 
-function currentDay(currentDay) {
+function currentDay(timestamp) {
+  let now = new Date(timestamp);
   let days = [
     "Sunday",
     "Monday",
@@ -10,13 +11,14 @@ function currentDay(currentDay) {
     "Friday",
     "Saturday",
   ];
-  let day = days[currentDay.getDay()];
+  let day = days[now.getDay()];
 
   return day;
 }
 
-function currentDate(currentDate) {
-  let date = currentDate.getDate();
+function currentDate(timestamp) {
+  let now = new Date(timestamp);
+  let date = now.getDate();
   let months = [
     "January",
     "February",
@@ -31,21 +33,22 @@ function currentDate(currentDate) {
     "November",
     "December",
   ];
-  let month = months[currentDate.getMonth()];
+  let month = months[now.getMonth(timestamp)];
 
-  let year = currentDate.getFullYear();
+  let year = now.getFullYear(timestamp);
 
   return `${date} ${month} ${year}`;
 }
 
-function currentTime(time) {
-  let hour = time.getHours();
+function currentTime(timestamp) {
+  let now = new Date(timestamp);
+  let hour = now.getHours();
 
   if (hour < 10) {
     hour = `0${hour}`;
   }
 
-  let minutes = time.getMinutes();
+  let minutes = now.getMinutes();
 
   if (minutes < 10) {
     minutes = `0${minutes}`;
@@ -77,6 +80,16 @@ function showParameters(response) {
   document.querySelector("#wind-speed").innerHTML = `${Math.round(
     response.data.wind.speed * 3.6
   )} km/h`;
+
+  document.querySelector("#current-date").innerHTML = currentDate(
+    response.data.dt * 1000
+  );
+  document.querySelector("#current-time").innerHTML = currentTime(
+    response.data.dt * 1000
+  );
+  document.querySelector("#current-day").innerHTML = currentDay(
+    response.data.dt * 1000
+  );
 }
 
 // Current location
@@ -120,14 +133,6 @@ function changeToFahrenheit(event) {
   event.preventDefault();
   actualTemperature.innerHTML = 66;
 }
-
-let now = new Date();
-let actualDate = document.querySelector("#current-date");
-let actualTime = document.querySelector("#current-time");
-let actualDay = document.querySelector("#current-day");
-actualDay.innerHTML = currentDay(now);
-actualDate.innerHTML = currentDate(now);
-actualTime.innerHTML = currentTime(now);
 
 let actualTemperature = document.querySelector("#current-temperature");
 let unitC = document.querySelector("#unit-C");
