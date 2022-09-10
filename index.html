@@ -51,9 +51,9 @@
                 </button>
               </div>
               <div class="row">
-                <div class="currentParameters">
-                  <img class="currentImage" src="" alt="" id="icon" />
-                  <span class="currentTemperature" id="current-temperature"
+                <div class="current-parameters">
+                  <img class="current-icon" src="" alt="" id="current-icon" />
+                  <span class="current-temperature" id="current-temperature"
                     >22</span
                   >
                   <span class="units"
@@ -66,105 +66,70 @@
                 </div>
               </div>
               <div class="row">
-                <ul class="parametersList">
-                  <li class="listElement">
+                <ul class="parameters-list">
+                  <li class="list-element">
                     Pressure:
-                    <span class="value" id="pressure"> x hPa </span>
+                    <span class="list-element-value" id="pressure">
+                      x hPa
+                    </span>
                   </li>
 
-                  <li class="listElement">
+                  <li class="list-element">
                     Humidity:
-                    <span class="value" id="humidity"> 35% </span>
+                    <span class="list-element-value" id="humidity"> 35% </span>
                   </li>
 
-                  <li class="listElement">
+                  <li class="list-element">
                     Wind:
-                    <span class="value" id="wind-speed"> 18 km/h </span>
+                    <span class="list-element-value" id="wind-speed">
+                      18 km/h
+                    </span>
                   </li>
                 </ul>
               </div>
             </div>
 
             <div class="col-6">
-              <div class="column2">
-                <div class="currentCity" id="current-city">Gdańsk</div>
+              <div class="second-column">
+                <div class="current-city" id="current-city">Gdańsk</div>
 
-                <div class="currentDay" id="current-day">Friday</div>
+                <div class="current-day" id="current-day">Friday</div>
 
-                <div class="currentDate" id="current-date">22 July 2022</div>
+                <div class="current-date" id="current-date">22 July 2022</div>
 
-                <div class="currentTime" id="current-time">10:15 pm</div>
+                <div class="current-time" id="current-time">10:15 pm</div>
 
-                <div class="currentDescription" id="current-description">
+                <div class="current-description" id="current-description">
                   Cloudly
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="row bottomPart">
+          <div class="row weather-forecast">
             <div class="col">
-              <div class="nextDays">Saturday</div>
+              <div class="weather-forecast-day">Saturday</div>
 
-              <img class="nextDayImage" src="images/cloudy.svg" alt="" />
+              <img
+                class="weather-forecast-icon"
+                src="http://openweathermap.org/img/wn/10d@2x.png"
+                alt=""
+                id="weather-forcast-icon"
+              />
 
-              <div class="nextDaysTemperatures">
-                <span class="minTemperature"> 13°C </span>
-                <span class="maxTemperature"> 22°C </span>
-              </div>
-            </div>
-
-            <div class="col">
-              <div class="nextDays">Sunday</div>
-
-              <img class="nextDayImage" src="images/day.svg" alt="" />
-
-              <div class="nextDaysTemperatures">
-                <span class="minTemperature"> 12°C </span>
-                <span class="maxTemperature"> 20°C </span>
-              </div>
-            </div>
-
-            <div class="col">
-              <div class="nextDays">Monday</div>
-
-              <img class="nextDayImage" src="images/rainy-4.svg" alt="" />
-
-              <div class="nextDaysTemperatures">
-                <span class="minTemperature"> 10°C </span>
-                <span class="maxTemperature"> 18°C </span>
-              </div>
-            </div>
-
-            <div class="col">
-              <div class="nextDays">Tuesday</div>
-
-              <img class="nextDayImage" src="images/cloudy-day-2.svg" alt="" />
-
-              <div class="nextDaysTemperatures">
-                <span class="minTemperature"> 15°C </span>
-                <span class="maxTemperature"> 22°C </span>
-              </div>
-            </div>
-
-            <div class="col">
-              <div class="nextDays">Wednesday</div>
-
-              <img class="nextDayImage" src="images/thunder.svg" alt="" />
-
-              <div class="nextDaysTemperatures">
-                <span class="minTemperature"> 12°C </span>
-                <span class="maxTemperature"> 24°C </span>
+              <div class="weather-forecast-temperatures">
+                <span class="weather-forecast-temperature-min"> 13° </span>
+                <span class="weather-forecast-temperature-max"> 22° </span>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="openSourceLink">
+    <div class="open-source-link">
       <a
         href="https://github.com/Blueberryplanet/My_weather_app"
-        class="linkGitHub"
+        class="link-github"
         target="_blank"
         >Open source code</a
       >
