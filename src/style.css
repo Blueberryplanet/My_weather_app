@@ -50,8 +50,17 @@ body {
   top: -30px;
 }
 
-#unit-C,
-#unit-F {
+#celsius-link,
+#fahrenheit-link {
+  text-decoration: none;
+}
+
+.currentParameters .active {
+  color: #212529;
+  cursor: default;
+}
+
+.currentParameters .active:hover {
   text-decoration: none;
 }
 
@@ -98,7 +107,7 @@ body {
   font-weight: 550;
 }
 
-.currentDescription::first-letter {
+.currentDescription:first-letter {
   text-transform: capitalize;
 }
 

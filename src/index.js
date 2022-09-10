@@ -65,9 +65,10 @@ function showParameters(response) {
   document.querySelector("#current-description").innerHTML =
     response.data.weather[0].description;
 
-  document.querySelector("#current-temperature").innerHTML = Math.round(
-    response.data.main.temp
-  );
+  celsiusTemperature = response.data.main.temp;
+
+  document.querySelector("#current-temperature").innerHTML =
+    Math.round(celsiusTemperature);
 
   document.querySelector(
     "#pressure"
@@ -139,21 +140,34 @@ function submitCity(event) {
 
 // Temperature unit change
 
-function changeToCelsius(event) {
-  event.preventDefault();
-  actualTemperature.innerHTML = 19;
-}
-
 function changeToFahrenheit(event) {
   event.preventDefault();
-  actualTemperature.innerHTML = 66;
+
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+
+  let temperatureElement = document.querySelector("#current-temperature");
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 35;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
 
-let actualTemperature = document.querySelector("#current-temperature");
-let unitC = document.querySelector("#unit-C");
-let unitF = document.querySelector("#unit-F");
-unitC.addEventListener("click", changeToCelsius);
-unitF.addEventListener("click", changeToFahrenheit);
+function changeToCelsius(event) {
+  event.preventDefault();
+
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+
+  document.querySelector("#current-temperature").innerHTML =
+    Math.round(celsiusTemperature);
+}
+
+let celsiusTemperature = null;
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", changeToFahrenheit);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", changeToCelsius);
 
 let enterTheCity = document.querySelector("#enter-the-city");
 enterTheCity.addEventListener("submit", submitCity);
