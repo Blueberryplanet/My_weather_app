@@ -33,18 +33,16 @@ body {
 }
 
 .currentParameters {
-  margin: 5px 5px -34px 20px;
+  margin: 15px 5px -15px 38px;
 }
 
 .currentImage {
-  width: 150px;
   margin-bottom: 30px;
 }
 
 .currentTemperature {
   font-size: 60px;
   font-weight: 500;
-  margin-left: -20px;
 }
 .units {
   font-size: 20px;
@@ -60,7 +58,7 @@ body {
 .parametersList {
   list-style: none;
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 5px;
   margin-left: 10px;
   padding: 0;
 }
@@ -68,7 +66,7 @@ body {
 .listElement {
   text-decoration: none;
   font-size: 14px;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 .value {
