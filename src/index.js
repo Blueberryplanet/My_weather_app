@@ -57,6 +57,71 @@ function currentTime(timestamp) {
   return `${hour}:${minutes}`;
 }
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let days = [
+    "Sunday",
+    "Monday",
+    "Teusday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[date.getDay()];
+
+  return day;
+}
+
+// Forecast for next days
+
+function displayForecast(response) {
+  let forecast = response.data.daily;
+
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row weather-forecast">`;
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6 && index > 0) {
+      forecastHTML =
+        forecastHTML +
+        `
+      <div class="col">
+        <div class="weather-forecast-day">${formatDay(forecastDay.dt)}</div>
+          <img 
+          class="weather-forecast-icon"
+          src="http://openweathermap.org/img/wn/${
+            forecastDay.weather[0].icon
+          }@2x.png"
+          alt=""
+          id="weather-forcast-icon"
+          />
+          <div class="weather-forecast-temperatures">
+            <span class="weather-forecast-temperature-min"> ${Math.round(
+              forecastDay.temp.min
+            )}° </span>
+            <span class="weather-forecast-temperature-max"> ${Math.round(
+              forecastDay.temp.max
+            )}° </span>
+          </div>
+      </div>
+  `;
+    }
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
+// Getting coordinates to display the forecast
+
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "eb9542c65e739e0fb25ade97c749e2aa";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
 // Current parameters
 
 function showParameters(response) {
@@ -106,6 +171,8 @@ function showParameters(response) {
   document
     .querySelector("#current-icon")
     .setAttribute("alt", response.data.weather[0].description);
+
+  getForecast(response.data.coord);
 }
 
 // Current location

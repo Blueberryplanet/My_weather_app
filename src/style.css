@@ -119,6 +119,7 @@ body {
 
 .weather-forecast-day {
   font-size: 15px;
+  opacity: 0.9;
 }
 
 .weather-forecast-icon {
@@ -131,6 +132,7 @@ body {
 
 .weather-forecast-temperature-min {
   margin-right: 7px;
+  opacity: 0.8;
 }
 
 .weather-forecast-temperature-max {
