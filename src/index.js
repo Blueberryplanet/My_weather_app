@@ -1,4 +1,4 @@
-// Second column - day, time etc.
+// Current time
 
 function currentDay(timestamp) {
   let now = new Date(timestamp);
@@ -116,7 +116,6 @@ function displayForecast(response) {
 // Getting coordinates to display the forecast
 
 function getForecast(coordinates) {
-  console.log(coordinates);
   let apiKey = "eb9542c65e739e0fb25ade97c749e2aa";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
@@ -175,7 +174,7 @@ function showParameters(response) {
   getForecast(response.data.coord);
 }
 
-// Current location
+// Current location button
 
 function currentPosition(position) {
   let apiKey = "eb9542c65e739e0fb25ade97c749e2aa";
@@ -190,7 +189,7 @@ function currentLocation(event) {
   navigator.geolocation.getCurrentPosition(currentPosition);
 }
 
-// Submit - city
+// Submit city
 
 function searchCity(city) {
   let apiKey = "eb9542c65e739e0fb25ade97c749e2aa";
@@ -204,37 +203,6 @@ function submitCity(event) {
   let city = document.querySelector("#input-city").value;
   searchCity(city);
 }
-
-// Temperature unit change
-
-function changeToFahrenheit(event) {
-  event.preventDefault();
-
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-
-  let temperatureElement = document.querySelector("#current-temperature");
-  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 35;
-  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
-}
-
-function changeToCelsius(event) {
-  event.preventDefault();
-
-  celsiusLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
-
-  document.querySelector("#current-temperature").innerHTML =
-    Math.round(celsiusTemperature);
-}
-
-let celsiusTemperature = null;
-
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", changeToFahrenheit);
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", changeToCelsius);
 
 let enterTheCity = document.querySelector("#enter-the-city");
 enterTheCity.addEventListener("submit", submitCity);

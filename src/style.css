@@ -3,37 +3,33 @@ body {
 }
 
 .card {
-  border: 2px solid rgb(252, 253, 255);
+  border: 2px solid #ffffff;
   margin: 0 auto;
   margin-top: 50px;
   max-width: 800px;
 }
 
 .card-body {
-  background: linear-gradient(
-    178.6deg,
-    rgb(232, 245, 253) 3.3%,
-    rgb(252, 253, 255) 109.6%
-  );
+  background: linear-gradient(178.6deg, #bbe4e9 3.3%, #e7eaf6 109.6%);
   border-radius: 10px;
 }
 
 .form-control {
   display: inline;
   width: 95%;
-  border: 2px solid rgb(214, 232, 244);
+  border: 2px solid #b2d7dc;
   margin-left: 15px;
   margin-top: 5px;
 }
 
 .btn {
-  font-size: 13px;
+  font-size: 16px;
   margin-top: 5px;
   max-height: 40px;
 }
 
 .current-parameters {
-  margin: 15px 5px -15px 38px;
+  margin: 15px 5px -15px 75px;
 }
 
 .current-icon {
@@ -44,15 +40,11 @@ body {
   font-size: 60px;
   font-weight: 500;
 }
+
 .units {
   font-size: 20px;
   position: relative;
   top: -30px;
-}
-
-#celsius-link,
-#fahrenheit-link {
-  text-decoration: none;
 }
 
 .current-parameters .active {

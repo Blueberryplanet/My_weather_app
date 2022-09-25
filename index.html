@@ -5,11 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>🌤 Forecast</title>
-    <!--<script
-      src="https://kit.fontawesome.com/40486a1792.js"
-      crossorigin="anonymous"
-    ></script>
-    -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -32,7 +27,7 @@
           <div class="row">
             <div class="col-6">
               <div class="row">
-                <form class="col-9" id="enter-the-city">
+                <form class="col-10" id="enter-the-city">
                   <input
                     type="text"
                     placeholder="Enter the city"
@@ -43,65 +38,51 @@
                   />
                 </form>
                 <button
-                  class="btn btn-primary col-3"
+                  class="btn btn-primary col-2"
                   type="submit"
                   id="current-location-button"
                 >
-                  Current
+                  📌
                 </button>
               </div>
               <div class="row">
                 <div class="current-parameters">
                   <img class="current-icon" src="" alt="" id="current-icon" />
-                  <span class="current-temperature" id="current-temperature"
-                    >22</span
-                  >
-                  <span class="units"
-                    ><a href="#" id="celsius-link" class="active">°C</a>|<a
-                      href="#"
-                      id="fahrenheit-link"
-                      >°F</a
-                    ></span
-                  >
+                  <span
+                    class="current-temperature"
+                    id="current-temperature"
+                  ></span>
+                  <span class="units">°C</span>
                 </div>
               </div>
               <div class="row">
                 <ul class="parameters-list">
                   <li class="list-element">
                     Pressure:
-                    <span class="list-element-value" id="pressure">
-                      x hPa
-                    </span>
+                    <span class="list-element-value" id="pressure"></span>
                   </li>
-
                   <li class="list-element">
                     Humidity:
-                    <span class="list-element-value" id="humidity"> 35% </span>
+                    <span class="list-element-value" id="humidity"></span>
                   </li>
-
                   <li class="list-element">
                     Wind:
-                    <span class="list-element-value" id="wind-speed">
-                      18 km/h
-                    </span>
+                    <span class="list-element-value" id="wind-speed"></span>
                   </li>
                 </ul>
               </div>
             </div>
-
             <div class="col-6">
               <div class="second-column">
-                <div class="current-city" id="current-city">Gdańsk</div>
+                <div class="current-city" id="current-city"></div>
 
-                <div class="current-day" id="current-day">Friday</div>
+                <div class="current-day" id="current-day"></div>
 
-                <div class="current-date" id="current-date">22 July 2022</div>
+                <div class="current-date" id="current-date"></div>
 
-                <div class="current-time" id="current-time">10:15 pm</div>
+                <div class="current-time" id="current-time"></div>
 
-                <div class="current-description" id="current-description">
-                  Cloudly
-                </div>
+                <div class="current-description" id="current-description"></div>
               </div>
             </div>
           </div>
